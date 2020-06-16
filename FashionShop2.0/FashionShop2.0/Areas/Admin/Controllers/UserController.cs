@@ -21,6 +21,15 @@ namespace FashionShop2._0.Areas.Admin.Controllers
             ViewBag.searchString = searchString;
             return View(model);
         }
+
+        public ActionResult Index1(string searchString, int page = 1, int pageSize = 5)
+        {
+            var dao1 = new AdminDAO();
+            var model1 = dao1.ListAllPaging(searchString, page, pageSize);
+            ViewBag.searchString = searchString;
+            return View(model1);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {

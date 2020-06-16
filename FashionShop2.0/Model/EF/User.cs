@@ -1,4 +1,4 @@
-namespace Model.EF
+Ôªønamespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -18,26 +18,26 @@ namespace Model.EF
         public long ID { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "TaÃi khoa“n")]
+        [Display(Name = "T√†i kho·∫£n")]
         public string UserName { get; set; }
 
         [StringLength(32)]
-        [Display(Name = "M‚Út kh‚“u")]
+        [Display(Name = "M·∫≠t kh·∫©u")]
         public string Password { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "HoÚ tÍn")]
+        [Display(Name = "H·ªç t√™n")]
         public string Name { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "–iÚa chi“")]
+        [Display(Name = "√ê·ªãa ch·ªâ")]
         public string Address { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "–iÍÚn thoaÚi")]
+        [Display(Name = "√êi·ªán tho·∫°i")]
         public string Phone { get; set; }
 
         [Column(TypeName = "smalldatetime")]
@@ -46,7 +46,7 @@ namespace Model.EF
         [Column(TypeName = "smalldatetime")]
         public DateTime? ModifiedDate { get; set; }
 
-        [Display(Name = "TraÚng thaÏi")]
+        [Display(Name = "Tr·∫°ng th√°i")]
         public bool Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

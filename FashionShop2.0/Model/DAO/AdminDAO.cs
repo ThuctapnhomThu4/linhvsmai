@@ -24,6 +24,17 @@ namespace Model.DAO
         {
             return db.Admin.SingleOrDefault(x => x.UserName == userName);
         }
+
+        public IEnumerable<Admin> ListAllPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<Admin> model = db.Admin;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
+        }
+
         public int Login(string userName, string passWord)
         {
          //   string pashPassword = passWord.GetHashCode(passWord);
