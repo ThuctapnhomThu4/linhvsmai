@@ -180,10 +180,34 @@
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\DieuKhoanController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NamController.cs" />
     <Compile Include="Controllers\NuController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DAO\AdminDAO.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\OrderDetailDAO.cs" />
+    <Compile Include="DAO\ProductCategoryDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\SlideDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="EF\About.cs" />
+    <Compile Include="EF\Admin.cs" />
+    <Compile Include="EF\ChiTietHoaDon.cs" />
+    <Compile Include="EF\Color.cs" />
+    <Compile Include="EF\Contact.cs" />
+    <Compile Include="EF\DanhMucSP.cs" />
+    <Compile Include="EF\FashionShopDbContext.cs" />
+    <Compile Include="EF\Feedback.cs" />
+    <Compile Include="EF\HoaDon.cs" />
+    <Compile Include="EF\Menu.cs" />
+    <Compile Include="EF\MenuType.cs" />
+    <Compile Include="EF\SanPham.cs" />
+    <Compile Include="EF\Size.cs" />
+    <Compile Include="EF\Slide.cs" />
+    <Compile Include="EF\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2157,6 +2181,8 @@
     <Content Include="Views\Nu\Index.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\FeedBack\Index.cshtml" />
+    <Content Include="Views\DieuKhoan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
