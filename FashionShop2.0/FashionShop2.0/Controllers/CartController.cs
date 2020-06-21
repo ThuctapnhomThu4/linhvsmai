@@ -116,8 +116,49 @@ namespace FashionShop2._0.Controllers
             }
             return View(list);
         }
+        [HttpPost]
+        public ActionResult Payment(string shipName, string Address, string Phone, string Email)
+        {
+            var session = (UserLogin)Session[CommonConstants.USER_SESSION];
+            if (session != null)
+            {
+                var order = new OrderViewModel();
+                order.CreatedDate = DateTime.Now;
+                order.UserID = session.UserID;
+                order.Name = shipName;
+                order.Address = Address;
+                order.Phone = Phone;
+                order.Email = Email;
 
-      
+                try
+                {
+                    var id = new OrderDAO().Insert(order);
+                    var cart = (List<CartItem>)Session[CartSession];
+                    var detailDao = new OrderDetailDAO();
+                    foreach (var item in cart)
+                    {
+                        var orderDetail = new OrderDetailViewModel();
+                        orderDetail.ProductID = item.Product.ID;
+                        orderDetail.OrderID = id;
+                        orderDetail.Quantity = item.Quantity;
+                        orderDetail.Price = item.Product.Price;
+                        detailDao.Insert(orderDetail);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return Redirect("/hoan-thanh");
+            }
+            else
+            {
+                return Redirect("/dang-nhap");
+            }
+
+        }
+
         public ActionResult Success()
         {
             return View();
